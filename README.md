@@ -1,7 +1,7 @@
 # qinfra
 
-Q infrastructure
-
+ Environment Setup
+ ===========
 To run this framework, you will need to install R
 
 You also need to download the "binaries" of Q/KDB+ for corresponding environment in order to run the launch scripts.
