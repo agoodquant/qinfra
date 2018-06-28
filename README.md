@@ -4,6 +4,8 @@ Q infrastructure
 
 To run this framework, you will need to install R
 
+You also need to download the "binaries" of Q/KDB+ for corresponding environment in order to run the launch scripts.
+
 To launch a Q process, execute w32/q.bat (or w32v35/q.bat), open a port by typing "\p 26041" (whatever port number you preferred)
 
 To use https and wss, you will need to setup openssl on windows. Do the following (first check https://code.kx.com/wiki/Cookbook/SSL)
