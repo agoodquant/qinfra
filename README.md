@@ -26,12 +26,30 @@ To use https and wss, you will need to setup openssl on windows. Do the followin
     5.2 set SSL_KEY_FILE=%userprofile%\certs\server-key.pem<br/>
     5.3 to execute q in ssl mode, in command line: q -E 1<br/>
     5.4 alternatively, you can edit and execute q_ssl.bat<br/>
-    
+
 On Linux, simply skip step 1 & 2. And replace %userprofile% to $HOME whereever applicable
+
+ Q Depends
+ ===========
+.qr.cleanDep[];
+.qr.loadDep[`env;"Q:/qr/env"];
+.qr.loadDep[`quant;"Q:/qr/quant"];
+.qr.listDep[]
+
+ Q Load
+ ===========
+.qr.load["env"];
+.qr.load["thirdparty"];
+.qr.load["quant"];
+.qr.load["util"];
+.qr.include["quant"; "random.q"];
+.qr.reload[];
+.qr.listModule[]
+
 
  Tools Setup
  ===========
- 
+
  1. Sublime https://www.sublimetext.com/
  2. Sublime Q https://github.com/komsit37/sublime-q
  3. Bare Tail https://www.baremetalsoft.com/baretail/
