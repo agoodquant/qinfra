@@ -33,19 +33,19 @@ On Linux, simply skip step 1 & 2. And replace %userprofile% to $HOME whereever a
 
  Q Depends
  ===========
-.qr.cleanDep[];
-.qr.loadDep[`env;"Q:/qr/env"];
-.qr.loadDep[`quant;"Q:/qr/quant"];
+.qr.cleanDep[];<br/>
+.qr.loadDep[`env;"Q:/qr/env"];<br/>
+.qr.loadDep[`quant;"Q:/qr/quant"];<br/>
 .qr.listDep[]
 
  Q Load
  ===========
-.qr.load["env"];
-.qr.load["thirdparty"];
-.qr.load["quant"];
-.qr.load["util"];
-.qr.include["quant"; "random.q"];
-.qr.reload[];
+.qr.load["env"];<br/>
+.qr.load["thirdparty"];<br/>
+.qr.load["quant"];<br/>
+.qr.load["util"];<br/>
+.qr.include["quant"; "random.q"];<br/>
+.qr.reload[];<br/>
 .qr.listModule[]
 
 
