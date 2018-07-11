@@ -72,6 +72,14 @@
         .qr.priv.depend:([module:`$()] path:());
         .qr.priv.dependStack:([] module:`$(); path:());
         ];
+
+    if[`depend in key .Q.opt .z.x;
+        .qr.loadDep[`;ssr[(raze/) .Q.opt[.z.x]`depend;"\\";"/"]];
+        ];
+
+    if[`init in key .Q.opt .z.x;
+        .qr.include[`;ssr[(raze/) .Q.opt[.z.x]`init;"\\";"/"]];
+        ];
     };
 
 .qr.init[];
