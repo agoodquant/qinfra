@@ -34,8 +34,8 @@ On Linux, simply skip step 1 & 2. And replace %userprofile% to $HOME whereever a
  Q Depends
  ===========
 .qr.cleanDep[];<br/>
-.qr.loadDep[`env;"Q:/qr/env"];<br/>
-.qr.loadDep[`quant;"Q:/qr/quant"];<br/>
+.qr.loadDep["env";"Q:/qr/env"];<br/>
+.qr.loadDep["quant";"Q:/qr/quant"];<br/>
 .qr.listDep[]
 
  Q Load
