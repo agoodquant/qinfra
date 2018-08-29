@@ -33,20 +33,20 @@ On Linux, simply skip step 1 & 2. And replace %userprofile% to $HOME whereever a
 
  Q Depends
  ===========
-.qr.cleanDep[];<br/>
-.qr.loadDep["env";"Q:/qr/env"];<br/>
-.qr.loadDep["quant";"Q:/qr/quant"];<br/>
-.qr.listDep[]
+.qinfra.cleanDep[];<br/>
+.qinfra.loadDep["env";"Q:/qr/env"];<br/>
+.qinfra.loadDep["quant";"Q:/qr/quant"];<br/>
+.qinfra.listDep[]
 
  Q Load
  ===========
-.qr.load["env"];<br/>
-.qr.load["thirdparty"];<br/>
-.qr.load["quant"];<br/>
-.qr.load["util"];<br/>
-.qr.include["quant"; "random.q"];<br/>
-.qr.reload[];<br/>
-.qr.listModule[]
+.qinfra.load["env"];<br/>
+.qinfra.load["thirdparty"];<br/>
+.qinfra.load["quant"];<br/>
+.qinfra.load["util"];<br/>
+.qinfra.include["quant"; "random.q"];<br/>
+.qinfra.reload[];<br/>
+.qinfra.listModule[]
 
 
  Tools Setup
