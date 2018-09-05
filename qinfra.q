@@ -4,35 +4,35 @@
 //
 
 .qinfra.loadDep:{[m;p]
-    if[exec count i from .qr.priv.dependStack where module=m, path like p;
-        delete from `.qr.priv.dependStack;
+    if[exec count i from .qinfra.priv.dependStack where module=m, path like p;
+        delete from `.qinfra.priv.dependStack;
         '`$"cyclying dependency";
         ];
 
-    `.qr.priv.depend upsert (m;p);
-    `.qr.priv.dependStack insert (m;p); // enqueue
+    `.qinfra.priv.depend upsert (m;p);
+    `.qinfra.priv.dependStack insert (m;p); // enqueue
     dependTxt:`$p, "/", "depends.txt";
     if[not () ~ key hsym dependTxt;
         dep:("SS"; " ") 0:dependTxt;
         .z.s'[first dep;string last dep]; // recursive stack
         ];
-    delete from `.qr.priv.dependStack where module = m, path like p; // dequeue
+    delete from `.qinfra.priv.dependStack where module = m, path like p; // dequeue
     };
 
 .qinfra.cleanDep:{
-    delete from `.qr.priv.depend;
+    delete from `.qinfra.priv.depend;
     };
 
 .qinfra.listDep:{
-    .qr.priv.depend
+    .qinfra.priv.depend
     };
 
 .qinfra.addDep:{[m;p]
-    `.qr.priv.dependStack upsert (m;p);
+    `.qinfra.priv.dependStack upsert (m;p);
     };
 
 .qinfra.getDep:{
-    exec first path from .qr.priv.depend where module = x
+    exec first path from .qinfra.priv.depend where module = x
     };
 
 .qinfra.load:{[m]
@@ -47,30 +47,29 @@
     };
 
 .qinfra.listModule:{
-    .qr.priv.module
+    .qinfra.priv.module
     };
 
 .qinfra.reload:{
-    exec .qinfra.priv.include'[module;script] from .qr.priv.module;
+    exec .qinfra.priv.include'[module;script] from .qinfra.priv.module;
     };
 
 .qinfra.priv.include:{[m;s]
     value "\\l ", s;
-
-    $[0 = exec count i from .qr.priv.module where module=m, script like s;
-        `.qr.priv.module insert (m;s;.z.p);
-        update time:.z.p from `.qr.priv.module where module=m, script like s
+    $[0 = exec count i from .qinfra.priv.module where module=m, script like s;
+        `.qinfra.priv.module insert (m;s;.z.p);
+        update time:.z.p from `.qinfra.priv.module where module=m, script like s
         ];
     };
 
 .qinfra.init:{
-    if[()~key `.qr.priv.module;
-        .qr.priv.module:([] module:`$(); script:(); time:"p"$());
+    if[()~key `.qinfra.priv.module;
+        .qinfra.priv.module:([] module:`$(); script:(); time:"p"$());
         ];
 
-    if[()~key `..qr.priv.depend;
-        .qr.priv.depend:([module:`$()] path:());
-        .qr.priv.dependStack:([] module:`$(); path:());
+    if[()~key `..qinfra.priv.depend;
+        .qinfra.priv.depend:([module:`$()] path:());
+        .qinfra.priv.dependStack:([] module:`$(); path:());
         ];
 
     if[`depend in key .Q.opt .z.x;
@@ -81,5 +80,7 @@
         .qinfra.include[`;ssr[(raze/) .Q.opt[.z.x]`init;"\\";"/"]];
         ];
     };
+
+
 
 .qinfra.init[];
