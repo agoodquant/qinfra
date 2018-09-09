@@ -39,11 +39,22 @@
     .qinfra.include[m;"module.q"];
     };
 
+.qinfra.import:{[ns]
+    emptyNS:enlist[`]!enlist (::);
+    $[() ~ key ns; ns set emptyNS;
+        if[not ` in key ns; ns set emptyNS, value ns;]
+        ];
+    };
+
 .qinfra.include:{[m;s]
     m:$[-11h=type m; m; `$m];
     s:$[-11h=type s; s; `$s];
     s:$[null m; string s; .qinfra.getDep[m], "/", string s];
     .qinfra.priv.include[m;s];
+    };
+
+.qinfra.clean:{[ns]
+    delete from ns;
     };
 
 .qinfra.listModule:{
@@ -63,6 +74,8 @@
     };
 
 .qinfra.init:{
+    .qinfra.import[`.qinfra];
+
     if[()~key `.qinfra.priv.module;
         .qinfra.priv.module:([] module:`$(); script:(); time:"p"$());
         ];
@@ -80,7 +93,5 @@
         .qinfra.include[`;ssr[(raze/) .Q.opt[.z.x]`init;"\\";"/"]];
         ];
     };
-
-
 
 .qinfra.init[];
