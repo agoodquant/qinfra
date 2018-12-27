@@ -57,6 +57,10 @@
     delete from ns;
     };
 
+.qinfra.clear:{
+    delete from `.;
+    };
+
 .qinfra.listModule:{
     .qinfra.priv.module
     };
