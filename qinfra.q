@@ -61,6 +61,15 @@
     delete from `.;
     };
 
+.qinfra.lsg:{
+    globals:value `.;
+    ([] vars:key globals; values:value globals)
+    };
+
+.qinfra.lsn:{
+    flip enlist[`ns]!enlist key `
+    };
+
 .qinfra.listModule:{
     .qinfra.priv.module
     };
