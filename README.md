@@ -61,4 +61,4 @@ On Linux, simply skip step 1 & 2. And replace %userprofile% to $HOME whereever a
  Licence
  ===========
  
- [MIT](https://github.com/agoodquant/qinfra/edit/master//LICENSE)
+ [MIT](https://github.com/agoodquant/qinfra/blob/master/LICENSE)
