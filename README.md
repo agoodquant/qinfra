@@ -52,8 +52,13 @@ On Linux, simply skip step 1 & 2. And replace %userprofile% to $HOME whereever a
  Tools Setup
  ===========
 
- 1. Sublime https://www.sublimetext.com/
- 2. Sublime Q https://github.com/komsit37/sublime-q
- 3. Bare Tail https://www.baremetalsoft.com/baretail/
- 4. Studio for KDB+ https://github.com/CharlesSkelton/studio/blob/master/releases/studio.zip
- 5. Qstudio for research http://www.timestored.com/qstudio/
+ 1. [Sublime](https://www.sublimetext.com/)
+ 2. [Sublime Q] (https://github.com/komsit37/sublime-q)
+ 3. [Bare Tail] (https://www.baremetalsoft.com/baretail/)
+ 4. [Studio for (KDB+] https://github.com/CharlesSkelton/studio/blob/master/releases/studio.zip)
+ 5. [Qstudio for research] (http://www.timestored.com/qstudio/)
+
+ Licence
+ ===========
+ 
+ [MIT](https://github.com/agoodquant/qinfra/edit/master//LICENSE)
